@@ -1,18 +1,14 @@
 terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
-    }
+       backend "remote" {         
+       organization = "neerajsinghnegi"
+       workspaces {
+       name = "Github-Action"
+       }
+     }
   }
 
-  backend "remote" {
-   organization = "neerajsinghnegi"
-
-    workspaces {
-      name = "Github-Action"
+resource "null_resource" "example" {
+       triggers = {
+       value = "A example resource that does nothing!"
+       }
     }
-  }
-}
