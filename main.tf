@@ -1,18 +1,25 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
+      source  = "hashicorp/aws"
+      version = "~> 3.27"
     }
   }
 
-  backend "remote" {
-   organization = "neerajsinghnegi"
+  required_version = ">= 0.14.9"
+}
 
-    workspaces {
-      name = "Github-Action"
-    }
+provider "aws" {
+  
+  region  = "ap-south-1"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-0ad704c126371a549"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "Demo"
   }
 }
+
