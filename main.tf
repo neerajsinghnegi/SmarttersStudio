@@ -12,7 +12,7 @@ terraform {
    organization = "neerajsinghnegi"
 
     workspaces {
-      name = "gh-actions-demo"
+      name = "Github-Action"
     }
   }
 }
