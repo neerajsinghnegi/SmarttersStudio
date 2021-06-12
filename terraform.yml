@@ -31,7 +31,7 @@ resource "local_file" "keySave" {
 resource "aws_security_group" "webserver" {
   name        = "webserver"
   description = "Allow webserver inbound traffic"
-  vpc_id      = "vpc-348a975c"
+  vpc_id      = "vpc-f736d69c"
 
   ingress {
     description = "http"
