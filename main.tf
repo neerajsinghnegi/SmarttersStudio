@@ -7,13 +7,16 @@ terraform {
      }
   }
 
+provider "aws" {
+  region  = "ap-south-1"
+}
+
 resource "null_resource" "example" {
        triggers = {
        value = "A example resource that does nothing!"
        }
     }
 resource "aws_instance" "app_server" {
-  region        = "ap-south-1"
   ami           = "ami-0ad704c126371a549"
   instance_type = "t2.micro"
 
