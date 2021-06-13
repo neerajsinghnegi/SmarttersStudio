@@ -1,7 +1,6 @@
 terraform {
        backend "remote" {         
        organization = "neerajsinghnegi"
-       region  = "ap-south-1"
        workspaces {
        name = "Github-Action"
        }
