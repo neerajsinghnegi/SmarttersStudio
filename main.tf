@@ -1,15 +1,12 @@
 terraform {
        backend "remote" {         
        organization = "neerajsinghnegi"
+       region  = "ap-south-1"
        workspaces {
        name = "Github-Action"
        }
      }
   }
-
-provider "aws" {
-  region  = "ap-south-1"
-}
 
 resource "null_resource" "example" {
        triggers = {
