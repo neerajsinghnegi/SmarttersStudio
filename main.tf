@@ -7,7 +7,9 @@ terraform {
      }
   }
 
-resource provider "aws" {}
+resource provider "aws" {
+       version = "~> 3.0"
+}
 
 resource "null_resource" "example" {
      triggers = {
