@@ -11,7 +11,7 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
-env:
+    env:
         access_key: "&{secrets.AWS_ACCESS_KEY_ID}"
         secret_key: "${secrets.AWS_SECRETE_ACCESS_KEY}"
         region: "${AWS_DEFAULT_REGION}"
